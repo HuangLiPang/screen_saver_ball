@@ -1,5 +1,5 @@
 "use strict";
-let canvas = document.getElementById("Ball");
+let canvas = document.getElementById("game");
 let ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
@@ -34,7 +34,6 @@ Ball.prototype = {
   },
   createBall: function() {
     let ball = this._ball = document.createElement("canvas"),
-      ctx = ball.getContext('2d');
     ball.width = ball.height = 2 * this.radius;
     this.drawBall();
   },
@@ -75,7 +74,7 @@ Ball.prototype = {
   }
 }
 
-let ball = new Ball(x, y, 20, -2, 1, "Ball");
+let ball = new Ball(x, y, 20, -2, 1, "game");
 setInterval(() => {
   ball.move();
 }, 20);
